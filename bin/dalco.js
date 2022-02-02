@@ -10,7 +10,7 @@ const program = new Command();
 program
   .name('dalco')
   .description('A swiss army knife of tools.')
-  .version('1.0.2');
+  .version('1.0.3');
 
 // https://unix.stackexchange.com/questions/28803/how-can-i-reduce-a-videos-size-with-ffmpeg
 program
@@ -41,7 +41,7 @@ program
       if (error) {
         spinner.fail(`${error}`);
         if (stderr.includes('command not found') || stderr.includes('not recognized')) {
-          console.error('Please install ffmpeg from https://ffmpeg.org/download.html.');
+          console.error('Please install ffmpeg from https://ffmpeg.org/download.html before continuing.');
         }
       } else {
         spinner.succeed('Compression complete!');
