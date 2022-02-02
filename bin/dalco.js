@@ -10,7 +10,7 @@ const program = new Command();
 program
   .name('dalco')
   .description('A swiss army knife of tools.')
-  .version('1.0.1');
+  .version('1.0.2');
 
 // https://unix.stackexchange.com/questions/28803/how-can-i-reduce-a-videos-size-with-ffmpeg
 program
@@ -22,11 +22,11 @@ program
   .option('-c, --crf <CRF>', 'Constant Rate Factor, the higher the more compressed')
   .action((input, output, options) => {
     if (!fs.existsSync(input)) {
-      console.log(`${input} does not exist.`);
+      console.error(`${input} does not exist.`);
       return;
     }
     if (fs.existsSync(output)) {
-      console.log(`${output} already exists.`);
+      console.error(`${output} already exists.`);
       return;
     }
     const defaultCRF = 30;
