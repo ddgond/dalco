@@ -10,7 +10,7 @@ const program = new Command();
 program
   .name('dalco')
   .description('A swiss army knife of tools.')
-  .version('1.0.3');
+  .version('1.0.4');
 
 // https://unix.stackexchange.com/questions/28803/how-can-i-reduce-a-videos-size-with-ffmpeg
 program
@@ -29,6 +29,8 @@ program
       console.error(`${output} already exists.`);
       return;
     }
+    input = input.replace(/"/g, '\\"');
+    output = output.replace(/"/g, '\\"');
     const defaultCRF = 30;
     const setBitrateInfo = `-b:v ${options.bitrate}MB`;
     const setCRFInfo = `-c:v libx264 -crf ${options.crf || defaultCRF}`;
@@ -37,7 +39,7 @@ program
       text: 'Compressing video...',
       spinner: 'soccerHeader'
     }).start();
-    const child = exec(`ffmpeg -i ${input} -loglevel quiet -preset faster ${sizeInfo} ${output}`, (error, stdout, stderr) => {
+    const child = exec(`ffmpeg -i "${input}" -loglevel quiet -preset faster ${sizeInfo} "${output}"`, (error, stdout, stderr) => {
       if (error) {
         spinner.fail(`${error}`);
         if (stderr.includes('command not found') || stderr.includes('not recognized')) {
