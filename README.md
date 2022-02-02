@@ -14,6 +14,11 @@ Compresses a video file using either a fixed bitrate or Constant Rate Factor. De
 
 **Usage:** `dalco compress [input] [output] -b [bitrate MB/s] -c [CRF]`
 
+### generateSpell
+Generates new D&D 5e spells by replacing words in existing ones.
+
+**Usage:** `dalco generateSpell`
+
 ### update
 Updates dalco to the most recent version.
 
