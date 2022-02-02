@@ -2,6 +2,10 @@
 Dalco is a simple command line tool I use to store various tools I make for my
 own use as well as shorthands for various commands.
 
+## Installation
+
+`npm i -g https://github.com/ddgond/dalco`
+
 ## Commands
 ### compress
 Compresses a video file using either a fixed bitrate or Constant Rate Factor. Defaults to a CRF of 30.
