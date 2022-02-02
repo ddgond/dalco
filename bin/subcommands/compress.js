@@ -31,7 +31,7 @@ const compress = (program) => {
         text: 'Compressing video...',
         spinner: 'soccerHeader'
       }).start();
-      const child = exec(`ffmpeg -i "${input}" -loglevel quiet -preset faster ${sizeInfo} "${output}"`, (error, stdout, stderr) => {
+      exec(`ffmpeg -i "${input}" -loglevel quiet -preset faster ${sizeInfo} "${output}"`, (error, stdout, stderr) => {
         if (error) {
           spinner.fail(`${error}`);
           if (stderr.includes('command not found') || stderr.includes('not recognized')) {
