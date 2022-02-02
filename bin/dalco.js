@@ -9,7 +9,7 @@ const program = new Command();
 program
   .name('dalco')
   .description('A swiss army knife of tools.')
-  .version('1.1.0');
+  .version('1.1.1');
   
 compress(program);
 update(program);

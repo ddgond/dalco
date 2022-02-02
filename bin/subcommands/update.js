@@ -10,11 +10,13 @@ const update = (program) => {
         text: 'Updating dalco...',
         spinner: 'soccerHeader'
       }).start();
-      const child = exec('npm i -g https://github.com/ddgond/dalco', (error, stdout, stderr) => {
+      exec('npm i -g https://github.com/ddgond/dalco', (error, stdout, stderr) => {
         if (error) {
           spinner.fail(`${error}`);
         } else {
-          spinner.succeed('Update complete!');
+          exec('dalco -V', (error, stdout, stderr) => {
+            spinner.succeed(`Successfully installed dalco version ${stdout}`);
+          })
         }
       });
     });
