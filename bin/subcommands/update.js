@@ -15,7 +15,7 @@ const update = (program) => {
           spinner.fail(`${error}`);
         } else {
           exec('dalco -V', (error, stdout, stderr) => {
-            spinner.succeed(`Successfully installed dalco version ${stdout}`);
+            spinner.succeed(`Successfully installed dalco version ${stdout.trim()}`);
           })
         }
       });
