@@ -1,3 +1,5 @@
+import { fileURLToPath } from 'url'
+const __filename = fileURLToPath(import.meta.url);
 import path from 'path';
 import jsonfile from 'jsonfile';
 import WordPOS from 'wordpos';
@@ -11,7 +13,7 @@ const generateSpell = (program) => {
 }
 
 const main = () => {
-  const spellListPath = path.join(process.cwd(), 'data', 'spellList.json');
+  const spellListPath = path.join(__filename, '..', '..', '..', 'data', 'spellList.json');
   jsonfile.readFile(spellListPath, (error, obj) => {
     if (error) {
       console.error(error);

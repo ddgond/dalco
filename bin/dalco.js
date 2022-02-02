@@ -10,7 +10,7 @@ const program = new Command();
 program
   .name('dalco')
   .description('A swiss army knife of tools.')
-  .version('1.1.7', '-v, --version');
+  .version('1.2.0', '-v, --version');
   
 compress(program);
 generateSpell(program);
