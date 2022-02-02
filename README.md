@@ -9,3 +9,8 @@ Compresses a video file using either a fixed bitrate or Constant Rate Factor. De
 **Requires**: ffmpeg, which can be installed [here](https://ffmpeg.org/download.html).
 
 **Usage:** `dalco compress [input] [output] -b [bitrate MB/s] -c [CRF]`
+
+### update
+Updates dalco to the most recent version.
+
+**Usage:** `dalco update`
