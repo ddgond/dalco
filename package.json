@@ -1,0 +1,19 @@
+{
+  "name": "dalco",
+  "version": "1.0.0",
+  "description": "A swiss army knife of tools.",
+  "exports": "./bin/dalco.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel \"Guatapuri\" Dangond",
+  "license": "ISC",
+  "bin": {
+    "dalco": "bin/dalco.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "commander": "^9.0.0",
+    "ora": "^6.0.1"
+  }
+}
