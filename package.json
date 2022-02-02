@@ -1,6 +1,6 @@
 {
   "name": "dalco",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A swiss army knife of tools.",
   "exports": "./bin/dalco.js",
   "scripts": {

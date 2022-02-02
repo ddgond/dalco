@@ -10,7 +10,7 @@ const program = new Command();
 program
   .name('dalco')
   .description('A swiss army knife of tools.')
-  .version('1.0.0');
+  .version('1.0.1');
 
 // https://unix.stackexchange.com/questions/28803/how-can-i-reduce-a-videos-size-with-ffmpeg
 program
