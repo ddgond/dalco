@@ -6,4 +6,6 @@ own use as well as shorthands for various commands.
 ### compress
 Compresses a video file using either a fixed bitrate or Constant Rate Factor. Defaults to a CRF of 30.
 
+**Requires**: ffmpeg, which can be installed [here](https://ffmpeg.org/download.html).
+
 **Usage:** `dalco compress [input] [output] -b [bitrate MB/s] -c [CRF]`

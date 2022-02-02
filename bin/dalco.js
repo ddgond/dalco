@@ -15,7 +15,7 @@ program
 // https://unix.stackexchange.com/questions/28803/how-can-i-reduce-a-videos-size-with-ffmpeg
 program
   .command('compress')
-  .description('Compresses a video to a specific size.')
+  .description('Compresses a video to a specific size using ffmpeg.')
   .argument('<input>', 'input file')
   .argument('<output>', 'output file')
   .option('-b, --bitrate <MB/s>', 'output file bitrate')
@@ -40,7 +40,9 @@ program
     const child = exec(`ffmpeg -i ${input} -loglevel quiet -preset faster ${sizeInfo} ${output}`, (error, stdout, stderr) => {
       if (error) {
         spinner.fail(`${error}`);
-        console.log(`stdout: ${stderr}`);
+        if (stderr.includes('command not found') || stderr.includes('not recognized')) {
+          console.error('Please install ffmpeg.');
+        }
       } else {
         spinner.succeed('Compression complete!');
       }
