@@ -41,7 +41,7 @@ program
       if (error) {
         spinner.fail(`${error}`);
         if (stderr.includes('command not found') || stderr.includes('not recognized')) {
-          console.error('Please install ffmpeg.');
+          console.error('Please install ffmpeg from https://ffmpeg.org/download.html.');
         }
       } else {
         spinner.succeed('Compression complete!');
