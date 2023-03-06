@@ -11,7 +11,7 @@ const compress = (program) => {
     .argument('<input>', 'input file')
     .argument('<output>', 'output file')
     .option('-b, --bitrate <MB/s>', 'output file bitrate')
-    .option('-c, --crf <CRF>', 'Constant Rate Factor, the higher the more compressed')
+    .option('-c, --crf <CRF>', 'Constant Rate Factor, the higher the more compressed. Default: 30')
     .action((input, output, options) => {
       if (!fs.existsSync(input)) {
         console.error(`${input} does not exist.`);
